@@ -1,6 +1,6 @@
 #!/usr/bin/python
 '''
-Grapy is a simple library for drawing grid based graphics, based on Pygame.
+Gridpy is a simple library for drawing grid based graphics, based on Pygame.
 It will not support images. This is merely a really convenient way of drawing squares on the screen.
 '''
 __author__  = "Brian Mock <mock.brian@gmail.com>"
@@ -157,7 +157,7 @@ _show_fps      = False
 _explicit_exit = False
 _video_is_on   = False
 
-_TITLE = "Grapy " + __version__
+_TITLE = "Gridpy " + __version__
 _program = None
 
 _fps = 60
