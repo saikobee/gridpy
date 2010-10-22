@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 '''
 Gridpy is a simple library for drawing grid based graphics, based on Pygame.
 It will not support images. This is merely a really convenient way of drawing squares on the screen.

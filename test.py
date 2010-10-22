@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 
 # TODO stuff
 # - Optimize to not redraw grid lines and background unless you need to?
