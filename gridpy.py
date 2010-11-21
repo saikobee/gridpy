@@ -126,8 +126,8 @@ def set_square_size(size):
     _square_size = size
 
 # Border colors
-_primary   = GREY3
-_secondary = GREY3
+_primary   = GREY2
+_secondary = GREY2
 
 def set_border_colors(primary, secondary):
     '''Sets the border colors (primary, secondary).'''
@@ -144,7 +144,7 @@ def set_border_color(color):
     _secondary = color
 
 # Background color
-_background = GREY2
+_background = GREY1
 
 def set_background_color(color):
     '''Sets the background color.'''

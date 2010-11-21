@@ -11,7 +11,7 @@
 
 import gridpy
 
-#gridpy.set_dim((300, 300))
+#gridpy.set_dim((100, 100))
 #gridpy.set_square_size(1)
 #gridpy.set_background_color(gridpy.BLACK)
 #gridpy.set_border_colors(gridpy.BLUE, gridpy.BLACK)
@@ -39,7 +39,6 @@ rainbow = cycle([
     gridpy.BLUE,
     gridpy.WHITE,
     gridpy.GREY,
-    gridpy.BLACK,
 ])
 
 while True:
