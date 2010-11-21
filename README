@@ -1,0 +1,5 @@
+For more information about gridpy, view the Python documentation for it.
+
+Example:
+
+[user@computer ~]$ pydoc2 gridpy
