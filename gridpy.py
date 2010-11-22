@@ -65,6 +65,7 @@ GREY    = hex2rgb("888888")
 GRAY    = hex2rgb("888888")
 WHITE   = hex2rgb("FFFFFF")
 ###########################
+GREY0 = hex2rgb("000000")
 GREY1 = hex2rgb("111111")
 GREY2 = hex2rgb("222222")
 GREY3 = hex2rgb("333333")
@@ -81,6 +82,7 @@ GREYD = hex2rgb("DDDDDD")
 GREYE = hex2rgb("EEEEEE")
 GREYF = hex2rgb("FFFFFF")
 #=======================#
+GRAY0 = hex2rgb("000000")
 GRAY1 = hex2rgb("111111")
 GRAY2 = hex2rgb("222222")
 GRAY3 = hex2rgb("333333")
@@ -103,6 +105,7 @@ GRAYF = hex2rgb("FFFFFF")
 # Screen starting size
 _width, _height = None, None
 _old_size = None
+_should_debug = False
 
 def _size():
     '''Returns the screen size.'''
@@ -203,12 +206,12 @@ def cols():
     return _cols
 
 def _debug(*xs):
-    if __debug__:
+    if _should_debug:
         print " ".join(map(str, xs))
 
 def _debug_noln(*xs):
     import sys
-    if __debug__:
+    if _should_debug:
         print " ".join(map(str, xs)),
         sys.stdout.flush()
 
