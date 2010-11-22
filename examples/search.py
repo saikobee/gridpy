@@ -84,7 +84,7 @@ class World:
             (c+x, r+y)
             for x in (-1, 0, 1)
             for y in (-1, 0, 1)
-            if not (x == 0 and y == 0)
+            if not ((x, y) == (0, 0))
         ]
         return [pos for pos in poss if self.is_legal(pos)]
 
