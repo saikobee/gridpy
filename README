@@ -6,12 +6,12 @@ change grid colors with the API.
 
 For more information about gridpy, view the Python documentation for it.
 
-Examples:
+Command line examples:
 
-    [user@computer gridpy]$ pydoc2 gridpy
+    $ pydoc2 gridpy
 
     or
 
-    [user@computer gridpy]$ python2
+    $ python2
     >>> import gridpy
     >>> help(gridpy)
