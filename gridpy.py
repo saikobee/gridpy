@@ -115,6 +115,11 @@ def _size():
 
 _style = TRIPLE
 
+def _fix_square_size():
+    global _square_size
+    if _square_size < 1:
+        _square_size = 1
+
 def set_style(style):
     '''Sets the style of the grid squares'''
     global _style
@@ -127,6 +132,7 @@ def set_square_size(size):
     '''Sets the size of the grid squares'''
     global _square_size
     _square_size = size
+    _fix_square_size()
 
 # Border colors
 _primary   = GREY2
@@ -221,6 +227,11 @@ def _toggle_show_fps():
     _show_fps = not _show_fps
 
 # This should really be expressable with a lambda, python...
+def _toggle_debugging():
+    global _should_debug
+    _should_debug = not _should_debug
+
+# This should really be expressable with a lambda, python...
 def toggle_paused():
     global _paused
     _paused = not _paused
@@ -264,13 +275,14 @@ def _maybe_resize():
 def _grid_square_grow():
     '''Increases the grid square size.'''
     global _square_size
-    _square_size += 2
+    _square_size += 1
     _maybe_resize()
 
 def _grid_square_shrink():
     '''Decreases the grid square size.'''
     global _square_size
-    _square_size -= 2
+    _square_size -= 1
+    _fix_square_size()
     _maybe_resize()
 
 def _fps_increase():
@@ -291,6 +303,8 @@ _keybinds = {
     #pygame.locals.K_f: toggle_full_screen,
     pygame.locals.K_v: _toggle_show_fps,
     pygame.locals.K_p: toggle_paused,
+
+    pygame.locals.K_d: _toggle_debugging,
 
     pygame.locals.K_ESCAPE: _explicit_exit_func,
 
