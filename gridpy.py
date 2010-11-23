@@ -462,7 +462,7 @@ def update():
     _check()
     _clock.tick(_fps)
     if _show_fps:
-        _debug_noln("> %6.2f FPS\r" % _clock.get_fps())
+        _debug_noln("> %8.2f FPS\r" % _clock.get_fps())
 
 def _line(color, start, end, width=1):
     '''\
