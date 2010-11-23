@@ -24,7 +24,8 @@ class GameReader(object):
         ]
 
     def __str__(self):
-        return str(self.map)
+        lines = ["".join(row) for row in self.map]
+        return "\n".join(lines)
 
 if __name__ == "__main__":
     f = "test.life"
