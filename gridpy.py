@@ -288,14 +288,14 @@ def _grid_square_shrink():
 def _fps_increase():
     '''Increases the FPS.'''
     global _fps
-    _fps += 5
+    _fps += 10
 
 def _fps_decrease():
     '''Decreases the FPS.'''
     global _fps
-    _fps -= 5
-    if _fps < 5:
-        _fps = 5
+    _fps -= 10
+    if _fps < 10:
+        _fps = 10
 
 # Mapping of keys to functions
 _keybinds = {
@@ -539,8 +539,6 @@ def clear():
 def remove(pos):
     '''Removes the square at position pos from the grid.'''
     global _grid
-    # TODO
-    # What is going on here? FIXME
     del _grid[pos]
 
 def title(t):
