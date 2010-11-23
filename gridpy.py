@@ -107,6 +107,9 @@ _width, _height = None, None
 _old_size = None
 _should_debug = False
 
+_cols, _rows = 20, 20
+_square_size = 10
+
 def _size():
     '''Returns the screen size.'''
     global _width
@@ -124,9 +127,6 @@ def set_style(style):
     '''Sets the style of the grid squares'''
     global _style
     _style = style
-
-_cols, _rows = 10, 10
-_square_size = 25
 
 def set_square_size(size):
     '''Sets the size of the grid squares'''
