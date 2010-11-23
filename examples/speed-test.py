@@ -1,9 +1,5 @@
 #!/usr/bin/python2
 
-# TODO stuff
-# - Optimize to not redraw grid lines and background unless you need to?
-# - Fix single pixel mode
-# - Fix grid line drawing
 # - How do we want to add keybindings?
 #   - Use pygame.locals
 #   - Use ord('K')
