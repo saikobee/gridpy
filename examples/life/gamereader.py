@@ -14,14 +14,11 @@ class GameReader(object):
 
         rows = len(self.lines)
         cols = len(self.lines[0])
-        self.map = [
-            [
-                self.lines[r][c]
-                for c in xrange(cols)
-                if not self.lines[r][c] == "\n"
-            ]
-            for r in xrange(rows)
-        ]
+        self.map = [[
+            self.lines[r][c]
+            for c in xrange(cols)
+            if not self.lines[r][c] == "\n"]
+                for r in xrange(rows)]
 
     def __str__(self):
         lines = ["".join(row) for row in self.map]
