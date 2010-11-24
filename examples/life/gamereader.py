@@ -5,7 +5,7 @@ class GameReader(object):
 
     def __init__(self, file):
         '''Initializes the map from the given file'''
-        read(file)
+        self.read(file)
 
     def read(self, file):
         '''This method reads in the file data and processes it'''
@@ -16,7 +16,7 @@ class GameReader(object):
         rows = len(lines)
         cols = len(lines[0])
         self.char_map = [[
-            self.lines[r][c]
+            lines[r][c]
             for c in xrange(cols)
             if not lines[r][c] == "\n"]
                 for r in xrange(rows)]
@@ -33,5 +33,4 @@ class GameReader(object):
 if __name__ == "__main__":
     f = "test.life"
     g = GameReader(f)
-    g.read()
     print g
