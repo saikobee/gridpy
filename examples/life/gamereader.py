@@ -15,18 +15,18 @@ class GameReader(object):
 
         rows = len(lines)
         cols = len(lines[0])
-        self.map = [[
+        self.char_map = [[
             self.lines[r][c]
             for c in xrange(cols)
             if not lines[r][c] == "\n"]
                 for r in xrange(rows)]
 
-    def get_map(self):
-        '''Return the map matrix'''
-        return map
+    def get_char_map(self):
+        '''Return the char map matrix'''
+        return char_map
 
     def __str__(self):
-        lines = ["".join(row) for row in self.map]
+        lines = ["".join(row) for row in self.char_map]
         return "\n".join(lines)
 
 # GameReader test code
