@@ -1,29 +1,35 @@
 #!/usr/bin/python2
 
 class GameReader(object):
-    EMPTY_CHAR = "."
-    FILL_CHAR  = "@"
+    '''This class turns a text file into a matrix of characters'''
 
     def __init__(self, file):
-        self.file = file
+        '''Initializes the map from the given file'''
+        read(file)
 
-    def read(self):
-        f = open(self.file)
-        self.lines = f.readlines()
+    def read(self, file):
+        '''This method reads in the file data and processes it'''
+        f = open(file)
+        lines = f.readlines()
         f.close()
 
-        rows = len(self.lines)
-        cols = len(self.lines[0])
+        rows = len(lines)
+        cols = len(lines[0])
         self.map = [[
             self.lines[r][c]
             for c in xrange(cols)
-            if not self.lines[r][c] == "\n"]
+            if not lines[r][c] == "\n"]
                 for r in xrange(rows)]
+
+    def get_map(self):
+        '''Return the map matrix'''
+        return map
 
     def __str__(self):
         lines = ["".join(row) for row in self.map]
         return "\n".join(lines)
 
+# GameReader test code
 if __name__ == "__main__":
     f = "test.life"
     g = GameReader(f)
