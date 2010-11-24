@@ -16,10 +16,10 @@ class GameReader(object):
         rows = len(lines)
         cols = len(lines[0])
         self.char_map = [[
-            lines[r][c]
-            for c in xrange(cols)
-            if not lines[r][c] == "\n"]
-                for r in xrange(rows)]
+            char
+            for char in line
+            if char != "\n"]
+                for line in lines]
 
     def get_char_map(self):
         '''Return the char map matrix'''
