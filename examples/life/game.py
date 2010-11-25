@@ -76,7 +76,7 @@ class Game(object):
             return None
 
 if __name__ == "__main__":
-    from gamereader import GameReader
-    f = GameReader("test.life")
-    g = Game(f.char_map)
+    from reader import Reader
+    r = Reader("test.life")
+    g = Game(r.char_map)
     g.test()

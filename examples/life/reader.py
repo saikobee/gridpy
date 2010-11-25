@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 
-class GameReader(object):
+class Reader(object):
     '''This class turns a text file into a matrix of characters'''
 
     def __init__(self, file):
@@ -37,5 +37,5 @@ class GameReader(object):
 # GameReader test code
 if __name__ == "__main__":
     f = "test.life"
-    g = GameReader(f)
-    print g
+    r = Reader(f)
+    print r
