@@ -9,9 +9,8 @@ class Reader(object):
 
     def read(self, file):
         '''This method reads in the file data and processes it'''
-        f = open(file)
-        lines = f.readlines()
-        f.close()
+        lines = file.readlines()
+        file.close()
 
         rows = len(lines)
         cols = len(lines[0])

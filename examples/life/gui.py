@@ -9,7 +9,7 @@ class GUI(object):
     '''This class manages displaying an instance of Game'''
 
     FPS         = 10
-    SQUARE_SIZE = 12
+    SQUARE_SIZE = 15
     CELL_COLOR  = gridpy.WHITE
     TITLE       = "Life ** %ix%i"
 
@@ -47,7 +47,7 @@ class GUI(object):
             gridpy.clear()
 
 if __name__ == "__main__":
-    r = Reader("test.life")
+    r = Reader(open("test.life"))
     #print "--- Text File ---"
     #print r
     g = GUI(r.get_char_map())

@@ -45,9 +45,9 @@ class Game(object):
 
     def to_char(self, obj):
         if obj is None:
-            return "."
+            return Game.EMPTY_CHAR
         elif isinstance(obj, Cell):
-            return "@"
+            return Game.CELL_CHAR
         else:
             raise UnknownCharacterException
 
@@ -57,7 +57,7 @@ class Game(object):
 
         if   char == Game.CELL_CHAR:  return Cell()
         elif char == Game.EMPTY_CHAR: return None
-        else: raise UnknownCharacterException
+        else: raise UnknownCharacterException("Wrong character: %s" % char)
 
     def num_neighbors(self, position):
         '''Return the number of neighbors for position'''
