@@ -20,6 +20,10 @@ class Game(object):
 
         self.make_initial_map()
 
+    @property
+    def dimensions(self):
+        return (self.cols, self.rows)
+
     def make_initial_map(self):
         '''Fills the initial map with None or Cells based on the text map'''
         self.map0 = [[
@@ -79,11 +83,11 @@ class Game(object):
             for c, item in enumerate(row):
                 n = self.num_neighbors((c, r))
 
-                self.map1[r][c] = do_rules(item, n, (c, r))
+                self.map1[r][c] = self.do_rules(item, n, (c, r))
 
         self.swap_mat()
 
-    def do_rules(self, item, neighbors, position)
+    def do_rules(self, item, neighbors, position):
         c, r = position
         n = neighbors
 
@@ -105,6 +109,12 @@ class Game(object):
     def swap_mat(self):
         self.map0, self.map1 = \
         self.map1, self.map0
+
+    def cells(self):
+        return [(item, (c, r))
+        for r, row in enumerate(self.map0)
+        for c, item in enumerate(row)
+        if item is not None]
 
 if __name__ == "__main__":
     from reader import Reader

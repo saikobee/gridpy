@@ -29,7 +29,7 @@ class Reader(object):
 
     def get_char_map(self):
         '''Return the char map matrix'''
-        return char_map
+        return self.char_map
 
     def __str__(self):
         return self.str
