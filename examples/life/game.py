@@ -24,8 +24,8 @@ class Game(object):
         '''Fills the initial map with None or Cells based on the text map'''
         self.map0 = [[
             self._cell_or_empty(col, row)
-            for col in xrange(len(self.text_map[0]))]
-                for row in xrange(len(self.text_map))]
+            for col in xrange(self.cols)]
+                for row in xrange(self.rows)]
 
         self.map1 = [[
             None
@@ -36,7 +36,7 @@ class Game(object):
         '''Determines if a character represents a cell or nothing'''
         char = self.text_map[row][col]
 
-        if   char == Game.CELL_CHAR:  return Cell((col, row))
+        if   char == Game.CELL_CHAR:  return Cell()
         elif char == Game.EMPTY_CHAR: return None
         else: raise UnknownCharacterException
 
@@ -53,8 +53,7 @@ class Game(object):
 
         positions = [
             (col + c, row + r)
-            for c, r in mods2
-        ]
+            for c, r in mods2]
 
         neighbors = [self.mat_get(*position) for position in positions]
         neighbors = filter(lambda x: x != None, neighbors)
@@ -74,6 +73,38 @@ class Game(object):
             return self.map0[col][row]
         except IndexError:
             return None
+
+    def tick(self):
+        for r, row in enumerate(self.map0):
+            for c, item in enumerate(row):
+                n = self.num_neighbors((c, r))
+
+                self.map1[r][c] = do_rules(item, n, (c, r))
+
+        self.swap_mat()
+
+    def do_rules(self, item, neighbors, position)
+        c, r = position
+        n = neighbors
+
+        # If the grid is empty
+        if item is None:
+            if n == 3:
+                return Cell()
+            else:
+                return None
+        # If the grid has a cell
+        else:
+            if n < 2:
+                return None
+            elif n > 3:
+                return None
+            else:
+                return item
+
+    def swap_mat(self):
+        self.map0, self.map1 = \
+        self.map1, self.map0
 
 if __name__ == "__main__":
     from reader import Reader
