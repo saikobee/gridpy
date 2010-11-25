@@ -87,9 +87,9 @@ class Game(object):
                     print "%i neighbors at (%i, %i)" % (num, c, r)
 
     def mat_get(self, col, row, default=None):
-        '''Get the item at self.map0[col][row] or return default value'''
+        '''Get the item at self.map0[row][col] or return default value'''
         try: 
-            return self.map0[col][row]
+            return self.map0[row][col]
         except IndexError:
             return None
 
@@ -120,10 +120,10 @@ class Game(object):
         else:
             if n < 2:
                 return None
-            elif n > 3:
-                return None
-            else:
+            elif n in (2, 3):
                 return item
+            else:
+                return None
 
     def swap_mat(self):
         self.map0, self.map1 = \
