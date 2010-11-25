@@ -31,10 +31,25 @@ class Game(object):
             for col in xrange(self.cols)]
                 for row in xrange(self.rows)]
 
+        self.clear_map1()
+
+    def clear_map1(self):
         self.map1 = [[
             None
             for col in row]
                 for row in self.text_map]
+
+    def __str__(self):
+        lines = ["".join(map(self.to_char, row)) for row in self.map0]
+        return "\n".join(lines)
+
+    def to_char(self, obj):
+        if obj is None:
+            return "."
+        elif isinstance(obj, Cell):
+            return "@"
+        else:
+            raise UnknownCharacterException
 
     def _cell_or_empty(self, col, row):
         '''Determines if a character represents a cell or nothing'''
@@ -86,10 +101,14 @@ class Game(object):
                 self.map1[r][c] = self.do_rules(item, n, (c, r))
 
         self.swap_mat()
+        self.clear_map1()
 
     def do_rules(self, item, neighbors, position):
         c, r = position
         n = neighbors
+
+        ### REMOVE THIS BAD CODE NOW
+        #return item
 
         # If the grid is empty
         if item is None:

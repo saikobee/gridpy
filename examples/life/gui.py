@@ -8,9 +8,9 @@ from reader     import Reader
 class GUI(object):
     '''This class manages displaying an instance of Game'''
 
-    SQUARE_SIZE = 2
+    SQUARE_SIZE = 12
     CELL_COLOR  = gridpy.WHITE
-    TITLE       = "Game of Life ::: Gridpy Edition"
+    TITLE       = "Life ** %ix%i"
 
     def __init__(self, char_map):
         self.game = Game(char_map)
@@ -22,13 +22,13 @@ class GUI(object):
         #gridpy.set_background_color(gridpy.BLACK)
         #gridpy.set_border_colors(gridpy.BLUE, gridpy.BLACK)
         #gridpy.set_border_colors(gridpy.GREY, gridpy.WHITE)
-        gridpy.set_fps(5)
+        gridpy.set_fps(1)
         #gridpy.set_style(gridpy.TRIPLE)
         #gridpy.set_style(gridpy.DOUBLE)
         #gridpy.set_style(gridpy.SINGLE)
         #gridpy.set_style(gridpy.NONE)
 
-        gridpy.title(GUI.TITLE)
+        gridpy.title(GUI.TITLE % self.dim)
 
     def run(self):
         self.config()
@@ -45,5 +45,9 @@ class GUI(object):
 
 if __name__ == "__main__":
     r = Reader("test.life")
+    print "--- Text File ---"
+    print r
     g = GUI(r.get_char_map())
+    print "--- Game Matrix ---"
+    print g.game
     g.run()
