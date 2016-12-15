@@ -1,3 +1,5 @@
+# NO LONGER IN DEVELOPMENT
+
 gridpy provides simple grid based graphics for Python. It does not provide
 fancy features like pixmaps, shading, or the like. It just displays colored
 squares. However, it is very customizable during runtime. You may "zoom in"
